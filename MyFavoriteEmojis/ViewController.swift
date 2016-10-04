@@ -24,16 +24,19 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         // And contents
     }
     
+    var emoji = ["🌝 The Full Moon", "🌚 The New Moon", "🌞 The Sun", "🐙 The Octopus" ,"👽 The Alien", "👾 The Space Invader", "🌛 The Crescent Moon"]
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return emoji.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print(indexPath.row)
         let cell = UITableViewCell()
-        cell.textLabel?.text = "🌝"
+        cell.textLabel?.text = emoji[indexPath.row]
         return cell
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
